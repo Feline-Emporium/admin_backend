@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 import getAllUsers from "./src/routes/getAllUsers.js";
+import deleteUser from "./src/routes/deleteUser.js";
 
 const PORT = 3002;
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/users", getAllUsers);
+app.use("/users", deleteUser);
 
 app.get("/", (req, res) => {
   res.send("working fine");
