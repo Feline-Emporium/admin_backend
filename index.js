@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import * as dotenv from 'dotenv'
 dotenv.config()
 
+import login from "./src/routes/login.js";
 import getAllUsers from "./src/routes/getAllUsers.js";
 import deleteUser from "./src/routes/deleteUser.js";
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
+app.use("/", login);
 app.use("/users", getAllUsers);
 app.use("/users", deleteUser);
 
