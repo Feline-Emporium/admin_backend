@@ -4,8 +4,8 @@ import verifyToken from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.post("/all", verifyToken, async (req, res) => {
-  await getAllUsers().then((result) => {
+router.post("/all", /* verifyToken, */ async (req, res) => {
+  getAllUsers().then((result) => {
     res.status(200).json(result);
   })
 });
