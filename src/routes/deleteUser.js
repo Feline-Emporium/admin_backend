@@ -4,7 +4,7 @@ import verifyToken from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.delete('/delete/:uid', verifyToken, async (req, res) => {
+router.delete('/delete/:uid', /* verifyToken, */ async (req, res) => {
   try {
     await deleteUserByUid(req.params.uid).then((res) => {
       res.status(200).send(res);
