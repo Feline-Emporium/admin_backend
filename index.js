@@ -8,7 +8,7 @@ import login from "./src/routes/login.js";
 import getAllUsers from "./src/routes/getAllUsers.js";
 import deleteUser from "./src/routes/deleteUser.js";
 
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(cors());
